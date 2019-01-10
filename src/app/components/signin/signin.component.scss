@@ -1,0 +1,83 @@
+/* Sign In page start here*/
+
+.sign-up {
+  padding: 100px 0;
+
+  h3 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    margin-bottom: 15px;
+
+    span {
+      font-size: 13px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+
+      a {
+            color: #0079dd;
+      }
+    }
+  }
+
+  .sign-up-form {
+    label {
+      color: #76777f;
+      font-size: 13px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .form-control {
+      border: 2px solid #414544;
+      background: none;
+      height: 45px;
+      color: #fff;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .forget-password {
+      color: #0079dd;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background: none;
+      border-radius: 50px;
+      border: 2px solid #33a2e8;
+      color: #fff;
+      font-size: 15px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: .9rem 3.7rem;
+&:hover {
+  background: #0079dd;
+  color: #fff;
+}
+ 
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+  }
+
+}
+
+
+/* Sign In page end here*/
+
+
+@media(max-width:767px) {
+  .sign-up {
+    padding: 30px 0;
+}
+}

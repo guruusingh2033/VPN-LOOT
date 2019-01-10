@@ -1,0 +1,68 @@
+<!-- Home page start here  -->
+<app-header></app-header>
+<div class="overlay">
+  <div class="customising">
+    <h3>Home
+      <!-- <a href="#" class="close">x</a> -->
+    </h3>
+    <a (click)="openModal(template)" class="setting-btn">
+    </a>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+          <form class="setting-inner">
+
+            <div class="form-group">
+              <h5>Server</h5>
+              <select name="" class="arrow-select-class form-control">
+                <option>Fastest Server</option>
+                <option>Fastest Server 1</option>
+                <option>Fastest Server 2 </option>
+              </select>
+            </div>
+            <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
+              speeds to the game server or uses your standard connection if that is fastest.</p>
+            <button class="btn btn-success">Connect</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Template -->
+<ng-template #template>
+  <div class="modal-body" class="startup-form">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <form>
+      <h2>Settings</h2>
+
+      <div class="form-group">
+        <h5>Startup</h5>
+        <label>
+          <input type="checkbox" value=""> Launch Outfox on Window startup
+        </label>
+      </div>
+      <div class="form-group">
+        <h5>Notifications</h5>
+        <label>
+          <input type="checkbox" value=""> Enable desktop notifications
+        </label>
+      </div>
+      <div class="form-group">
+        <h5>Account</h5>
+        <p>
+          <a href="#" class="email">trim@internode.on.net</a>
+          <a href="#" class="manage-account ml-3">manage account </a>
+        </p>
+      </div>
+      <div class="form-group">
+        <button (click)="Logout()" class="btn btn-primary">Log Out</button>
+      </div>
+
+    </form>
+  </div>
+</ng-template>

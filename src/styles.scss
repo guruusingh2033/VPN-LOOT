@@ -1,0 +1,128 @@
+
+/* Sign In page start here*/
+body{
+  background-color:black
+}
+.sign-up {
+  padding: 100px 0;
+
+  h3 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    margin-bottom: 15px;
+
+    span {
+      font-size: 13px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+
+      a {
+        color: #4bba7f;
+      }
+    }
+  }
+
+  .sign-up-form {
+    label {
+      color: #76777f;
+      font-size: 13px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .form-control {
+      border: 2px solid #414544;
+      background: none;
+      height: 45px;
+      color: #fff;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .forget-password {
+      color: #4bba7f;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      background: #2ed58f;
+      background: linear-gradient(#ccef50, #2ed58f);
+      background: -moz-linear-gradient(#ccef50, #2ed58f);
+      background: -webkit-linear-gradient(#ccef50, #2ed58f);
+      background: -ms-linear-gradient(#ccef50, #2ed58f);
+      background: -o-linear-gradient(#ccef50, #2ed58f);
+      border-radius: 50px;
+      border: none;
+      color: #000;
+      font-size: 15px;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: .9rem 3.7rem;
+
+      &:hover {
+        background: #2ed58f;
+        background: linear-gradient(#2ed58f, #ccef50);
+        background: -moz-linear-gradient(#2ed58f, #ccef50);
+        background: -webkit-linear-gradient(#2ed58f, #ccef50);
+        background: -o-linear-gradient(#2ed58f, #ccef50);
+        background: -ms-linear-gradient(#2ed58f, #ccef50);
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+  }
+
+}
+
+
+
+.modal-backdrop.show {
+    opacity: .9;
+}
+.modal-content {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+.modal.show .modal-dialog {
+transform: translate(0, -50%);
+    top: 50%;
+}
+.close {
+    float: right;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: none;
+    opacity: 1;
+    margin-right: -70px;
+    margin-top: 7px;
+    &:hover, &:focus {
+      color: #fff;
+      box-shadow: none;
+      outline: none;
+    }
+  
+}
+/* Sign In page end here*/
+
+
+@media(max-width:767px) {
+  .sign-up {
+    padding: 30px 0;
+}
+.close {
+    margin-right: 10px;
+}
+}
