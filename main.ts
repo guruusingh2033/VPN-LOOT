@@ -20,9 +20,9 @@ function createWindow() {
     width: 900,
     height: 700,
     // icon: "./src/favicon.512x512.png",
-    // webPreferences: {
-    // devTools: false
-    // }
+    webPreferences: {
+    devTools: false
+    }
   });
 
   if (serve) {
