@@ -1,8 +1,8 @@
 {
   "productName": "Loot_VPN",
   "directories": {
-    "output": "release/",
-    "AppImage" : "./src/favicon.512x512.png"
+    "output": "release/"
+    
   },
     "files": [
         "**/*",
