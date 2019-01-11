@@ -2,9 +2,10 @@
 <app-header></app-header>
 <div class="overlay">
   <div class="customising">
-    <h3>Home
+    <h3>Control Panel
       <!-- <a href="#" class="close">x</a> -->
     </h3>
+      <button (click)="Logout()" class="btn btn-primary-home">Log Out</button>
     <a (click)="openModal(template)" class="setting-btn">
     </a>
     <div class="container">
@@ -16,13 +17,17 @@
               <h5>Server</h5>
               <select name="" class="arrow-select-class form-control">
                 <option>Fastest Server</option>
-                <option>Fastest Server 1</option>
-                <option>Fastest Server 2 </option>
+                <option>Australia, Sydney</option>
+                <option>USA, Ohio</option>
               </select>
             </div>
-            <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
-              speeds to the game server or uses your standard connection if that is fastest.</p>
+            <p>Choose the server you want to connect to. "Fastest Server" automatically selects the server with the fastest
+              speeds for gaming, streaming or downloading. Any other server region allows you to originate in that region
+              for access to your favorite TV Shows, Movies & other anonymous activity</p>
+            <!-- <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
+              speeds to the game server or uses your standard connection if that is fastest.</p> -->
             <button class="btn btn-success">Connect</button>
+
           </form>
         </div>
       </div>
@@ -43,25 +48,23 @@
       <div class="form-group">
         <h5>Startup</h5>
         <label>
-          <input type="checkbox" value=""> Launch Outfox on Window startup
+          <input type="checkbox" checked value=""> Launch Outfox on Window startup
         </label>
       </div>
       <div class="form-group">
         <h5>Notifications</h5>
         <label>
-          <input type="checkbox" value=""> Enable desktop notifications
+          <input type="checkbox" checked value=""> Enable desktop notifications
         </label>
       </div>
       <div class="form-group">
         <h5>Account</h5>
         <p>
           <a class="email">trim@internode.on.net</a>
-          <a class="manage-account ml-3">manage account </a>
+          <a (click)="openLink('https://www.lootvpn.com/login')" class="manage-account ml-3">manage account </a>
         </p>
       </div>
-      <div class="form-group">
-        <button (click)="Logout()" class="btn btn-primary">Log Out</button>
-      </div>
+     
 
     </form>
   </div>

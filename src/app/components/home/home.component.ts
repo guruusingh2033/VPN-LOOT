@@ -28,10 +28,13 @@ export class HomeComponent implements OnInit {
 
   Logout()
   {
-    this.modalRef.hide();
+    // this.modalRef.hide();
     this.router.navigate(['/']);
   }
   
+  openLink(mediaLink: any) {
+    this.electronService.openMediaLinkOnBrowser(mediaLink);
+  }
 
    openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

@@ -2,6 +2,8 @@ import { app, BrowserWindow, screen, nativeImage} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
+var icon = path.join(__dirname, 'src', 'favicon.512x512.png');
+
 
 let win, serve;
 const args = process.argv.slice(1);
@@ -15,6 +17,7 @@ function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
     frame : false,
+    icon: icon,
     // x: 0,
     // y: 0,
     width: 900,

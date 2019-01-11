@@ -39,7 +39,35 @@
             }
         }
     }
+ 
+.btn-primary-home-1 {
+    background: url(../../../assets/images/logout-header.png) no-repeat 94% 3px;
+    background-size: 16%;
+    border: none;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    padding: 0 31px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    color: #0079dd;
+    border-radius: 50px;
+    margin-left: auto;
+    vertical-align: text-bottom;
+    margin-top: -7px;
+    /* position: absolute; */
+    /* right: 56px; */
+    /* top: 50px; */
+    cursor: pointer;
+        &:hover {
+           color: #0079dd;
+          
+        }
 
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
 }
 .page-header{
     -webkit-app-region: drag;
@@ -49,6 +77,10 @@
   }
 .clsbtns a{
     -webkit-app-region: no-drag;
+  }
+  .feedback-header
+  {
+      -webkit-app-region: no-drag;
   }
 .main-nav {
     background: #ee3324;

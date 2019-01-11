@@ -98,35 +98,36 @@
     }
   }
 
-  .btn-primary {
-
-background: url(../../../assets/images/btn-border.png) no-repeat center top;
-border:none;
-width: 160px;
-height: 50px;
-    color: #fff;
-    font-size: 15px;
+.btn-primary-home {
+    background: url(../../../assets/images/logout.png) no-repeat 94% 3px;
+       background-size: 16%;
+    border: none;
+    font-size: 16px;
     font-family: 'Oswald', sans-serif;
+    padding: 0 31px;
     text-transform: uppercase;
-    font-weight: 600;
-    padding: .9rem 3.7rem;
-
-    &:hover {
-        background: #2ed58f;
-        background: linear-gradient(#ccef50, #2ed58f);
-        background: -moz-linear-gradient(#ccef50, #2ed58f);
-        background: -webkit-linear-gradient(#ccef50, #2ed58f);
-        background: -ms-linear-gradient(#ccef50, #2ed58f);
-        background: -o-linear-gradient(#ccef50, #2ed58f);
+    transition: all 0.5s;
+    color: #fff;
     border-radius: 50px;
-    color: #000;
-    }
+    margin-left: auto;
+    vertical-align: text-bottom;
+    margin-top: 0;
+    position: absolute;
+    right: 16px;
+    top: 59px;
+    cursor: pointer;
+    cursor: pointer;
+        &:hover {
+           color: #fff;
+          
+        }
 
     &:focus {
       box-shadow: none;
       outline: none;
     }
   }
+
    .btn-success {
     background: none;
     border-radius: 50px;
@@ -138,7 +139,7 @@ height: 50px;
     font-weight: 600;
     padding: 1.3rem 5rem;
     margin: auto;
-    display: block;
+    display:inline-block;
 &:hover {
   background: green;
   color: #fff;
@@ -164,7 +165,7 @@ width: 20px;
     cursor: pointer;
     vertical-align: top;
     position: absolute;
-    right: 20px;
+    right: 118px;
     top: 61px;
 }
 
@@ -193,6 +194,7 @@ width: 20px;
 
     &:hover {
       text-decoration: none;
+      cursor: pointer;
     }
   }
 }

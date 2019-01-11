@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
      
   }
 
-  openSocialMedia(mediaLink: any)
+  openLink(mediaLink: any)
   {
     
     this.electronService.openMediaLinkOnBrowser(mediaLink);
