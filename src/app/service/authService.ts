@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { ApiService } from './apiservice';
+import {CurrentUserService} from './currentUserService'
 
 
 @Injectable({
@@ -17,15 +18,25 @@ export class AuthService {
   constructor(
     private apiService: ApiService,
     private http: Http,
+    private currentUserService: CurrentUserService
   ) { }
 
  
   attemptAuth(credentials : any) {
-    return this.apiService.get('/users/test').map(
+    return this.apiService.post('/login',credentials).map(
       res => {
+        this.currentUserService.setAuth(res);
+        debugger
         return res;
       }
     )
   }
 
+  getSubscription(credentials : any) {
+    return this.apiService.post('/getsubscription',credentials).map(
+      res => {
+        return res;
+      }
+    )
+  }
 }

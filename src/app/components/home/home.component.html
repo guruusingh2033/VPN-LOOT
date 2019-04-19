@@ -1,13 +1,23 @@
 <!-- Home page start here  -->
-<app-header></app-header>
-<div class="overlay">
+<app-header (statusAlert)="getSubscription($event)"></app-header>
+<div class="">
   <div class="customising">
     <h3>Control Panel
       <!-- <a href="#" class="close">x</a> -->
     </h3>
-      <button (click)="Logout()" class="btn btn-primary-home">Log Out</button>
-    <a (click)="openModal(template)" class="setting-btn">
-    </a>
+      <!-- <button (click)="Logout()" class="btn btn-primary-home">Log Out</button> -->
+      <div class="btn-group">
+      <button (click)="Logout()" class="btn btn-success-2">Logout</button>
+      <button (click)="openModal(template)" class="btn btn-success-3">Settings</button>
+
+      </div>
+<div class="mobile-btn-seeting">
+  <a (click)="Logout()" class="logout-btn-icon">
+  </a>
+<a (click)="openModal(template)" class="setting-btn-icon">
+</a>
+</div>
+
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-12 col-12">
@@ -15,23 +25,26 @@
 
             <div class="form-group">
               <h5>Server</h5>
-              <select name="" class="arrow-select-class form-control">
-                <option>Fastest Server</option>
-                <option>Australia, Sydney</option>
-                <option>USA, Ohio</option>
+              <select [(ngModel)]="selectedServer" name="servers" class="arrow-select-class form-control">
+                <!-- <option>Fastest Server</option> -->
+                <option *ngFor="let list of serverList;let i = index" [selected]="i == 0"  [value]="list.location">{{list.location}}</option>
+                <!-- <option>USA, Ohio</option> -->
               </select>
             </div>
-            <p>Choose the server you want to connect to. "Fastest Server" automatically selects the server with the fastest
-              speeds for gaming, streaming or downloading. Any other server region allows you to originate in that region
-              for access to your favorite TV Shows, Movies & other anonymous activity</p>
-            <!-- <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
-              speeds to the game server or uses your standard connection if that is fastest.</p> -->
-            <button class="btn btn-success">Connect</button>
-
+            <p>Choose the server you want to
+            connect to. Any server region allows you to originate in that region for access to your
+            favorite TV Shows, Movies & other anonymous activity.</p>
+            <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
+              speeds to the game server or uses your standard connection if that is fastest.</p>
+            <button (click)="connect()" *ngIf="!connected" class="btn btn-success" [disabled]="disableConnectButton">Connect</button>
+            <button (click)="disconnect()" *ngIf="connected" class="btn btn-success">Disconnect</button>
+            <!-- <button (click)="connect()"  class="btn btn-success">Connect</button>
+            <button (click)="disconnect()" class="btn btn-success">Disconnect</button> -->
           </form>
         </div>
       </div>
     </div>
+  
   </div>
 </div>
 
@@ -48,7 +61,7 @@
       <div class="form-group">
         <h5>Startup</h5>
         <label>
-          <input type="checkbox" checked value=""> Launch Outfox on Window startup
+          <input type="checkbox" checked value=""> Launch LootVPN on Window startup
         </label>
       </div>
       <div class="form-group">
@@ -60,7 +73,7 @@
       <div class="form-group">
         <h5>Account</h5>
         <p>
-          <a class="email">trim@internode.on.net</a>
+          <a class="email">{{this.emailID}}</a>
           <a (click)="openLink('https://www.lootvpn.com/login')" class="manage-account ml-3">manage account </a>
         </p>
       </div>
@@ -69,3 +82,31 @@
     </form>
   </div>
 </ng-template>
+
+
+<ng-template #logout>
+  <div class="modal-body" class="startup-form">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <form>
+      <h2>Logging out</h2>
+
+      <div class="form-group">
+        <h5>Are you sure you want to logout ?</h5>
+        <label>
+          <input type="checkbox" checked value="" disabled> VPN server will be disconnected if you log out.
+        </label>
+      </div>
+                <button (click)="LogoutConfirmed()" class="btn btn-success  confirm-float">Yes</button>
+                <button (click)="closeModal()" class="btn btn-danger logoutConfirmed confirm-float">NO</button>
+
+
+    </form>
+  </div>
+</ng-template>
+
+
+<div class="overlay"   [ngClass]="{'is-visible': showLoader,'is-invisible': !showLoader}">
+<div id="loader" ></div>
+</div>

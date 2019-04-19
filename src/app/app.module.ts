@@ -24,10 +24,19 @@ import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {ApiService} from './service/apiservice';
-import {AuthService} from './service/authService'
+import {AuthService} from './service/authService';
+import {CurrentUserService} from './service/currentUserService';
+import { AuthGuard} from './service/authguardService'
+import {NoAuthGuard} from './service/noauthguardService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { JwtService } from './service/jwtService';
 
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-bootstrap';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,6 +59,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     HttpModule,
     ModalModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,7 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService, ApiService, AuthService],
+  providers: [ElectronService, ApiService, AuthService, CurrentUserService, AuthGuard, NoAuthGuard, JwtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

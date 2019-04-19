@@ -17,18 +17,37 @@
   </div>
 
 </header>
-<nav class="main-nav">
-  <div class="container text-center">
-    <a class="free-trial">Your free trial has ended </a>
-    <a  (click)="openLink('https://www.lootvpn.com/login')" class="btn btn-primary">Buy Now</a>
-    <div class="clsbtns">
-      <a (click)="minimizeWindow()" class="subtract-2"></a>
-      <a (click)="maximizeWindow()" class="subtract-1"></a>
-      <a (click)="closeWindow()" class="subtract-3"></a>
-    </div>
-              
-
+<div class="clsbtns">
+  <a (click)="minimizeWindow()" class="subtract-2"></a>
+  <a (click)="maximizeWindow()" class="subtract-1"></a>
+  <a (click)="confirmClose()" class="subtract-3"></a>
+  <!-- <a (click)="auto()">cvbcvb</a> -->
+</div>
+<nav *ngIf="showRedBar" class="main-nav">
+  <div  class="container text-center">
+    <a class="free-trial">{{alertMessage}} </a>
+    <a *ngIf="showBuyButton" (click)="openLink('https://www.lootvpn.com/login')" class="btn btn-primary">Buy Now</a>
   </div>
 </nav>
+<ng-template #closewindow>
+  <div class="modal-body" class="startup-form">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <form>
+      <!-- <h2>Exit</h2> -->
 
+      <div class="form-group">
+        <h5>Are you sure you want to EXIT ?</h5>
+        <!-- <label>
+          <input type="checkbox" checked value="" disabled> VPN server will be disconnected if you log out.
+        </label> -->
+      </div>
+      <button (click)="closeWindow()" class="btn btn-success  confirm-float">Yes</button>
+      <button (click)="closeModal()" class="btn btn-danger closeConfirmed confirm-float">NO</button>
+
+
+    </form>
+  </div>
+</ng-template>
 <!-- Header end here  -->

@@ -11,7 +11,7 @@
         background-size: contain;
     }
     .btn-link {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Oswald-Regular';
         color: #333;
         font-size: 16px;
         background: url(../../../assets/images/feedback-icon.png) no-repeat left center;
@@ -45,7 +45,7 @@
     background-size: 16%;
     border: none;
     font-size: 16px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald-Regular';
     padding: 0 31px;
     text-transform: uppercase;
     transition: all 0.5s;
@@ -69,6 +69,17 @@
     }
   }
 }
+.closeConfirmed {
+    margin-right: 10px;
+}
+.confirm-float{
+    float:right
+}
+.startup-form h5 {
+    color: #fff;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
 .page-header{
     -webkit-app-region: drag;
 }
@@ -88,7 +99,7 @@
 
     .free-trial {
         color: #fff;
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Oswald-Regular';
         margin-right: 3%;
         font-size: 16px;
     }
@@ -96,7 +107,7 @@
         background: none;
         border: 2px solid #fff;
         font-size: 16px;
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Oswald-Regular';
         padding: .3rem 1.75rem;
         text-transform: uppercase;
         transition: all 0.5s;
