@@ -34,8 +34,6 @@
             <p>Choose the server you want to
             connect to. Any server region allows you to originate in that region for access to your
             favorite TV Shows, Movies & other anonymous activity.</p>
-            <p>Choose the Outfox server you want to connect to. "Fastest Server" automatically Select the server with the fastest
-              speeds to the game server or uses your standard connection if that is fastest.</p>
             <button (click)="connect()" *ngIf="!connected" class="btn btn-success" [disabled]="disableConnectButton">Connect</button>
             <button (click)="disconnect()" *ngIf="connected" class="btn btn-success">Disconnect</button>
             <!-- <button (click)="connect()"  class="btn btn-success">Connect</button>

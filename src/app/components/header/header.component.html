@@ -29,6 +29,15 @@
     <a *ngIf="showBuyButton" (click)="openLink('https://www.lootvpn.com/login')" class="btn btn-primary">Buy Now</a>
   </div>
 </nav>
+<nav *ngIf="showBlueBar" class="update-nav">
+  <div  class="container text-center">
+    <a class="free-trial">{{updateInfo.title}} </a>
+    <a  (click)="openLink('https://www.lootvpn.com')" class="btn btn-primary">Update</a>
+    <button type="button" (click)="hideBlueBar()" class="update-close pull-right" aria-label="Close" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</nav>
 <ng-template #closewindow>
   <div class="modal-body" class="startup-form">
     <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">

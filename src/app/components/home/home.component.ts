@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
       this.serverList= []; 
 
     })
+    
   }
 
   getSubscription($event){
@@ -59,7 +60,7 @@ export class HomeComponent implements OnInit {
             this.disableConnectButton = true;
             break;
             
-            case ('CLOSED'):
+           case ('CANCELLED'):
             this.disableConnectButton = true;
             break;
             

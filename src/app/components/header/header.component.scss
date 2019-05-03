@@ -1,6 +1,7 @@
 .page-header {
     background: #ebebeb;
     padding: 15px 0;
+
     .logo {
         max-width: 200px;
         height: 100px;
@@ -10,6 +11,7 @@
         background: url(../../../assets/images/logo.png) no-repeat 98% 15px;
         background-size: contain;
     }
+
     .btn-link {
         font-family: 'Oswald-Regular';
         color: #333;
@@ -17,82 +19,98 @@
         background: url(../../../assets/images/feedback-icon.png) no-repeat left center;
         background-size: 15%;
         padding-left: 33px;
+
         img {
             width: 25px;
             height: 25px;
             margin-right: 5px;
         }
+
         &:hover {
             text-decoration: none;
         }
     }
+
     .social {
         margin-left: 5%;
-        .fa-facebook-square, .fa-twitter, .fa-instagram, .fa-discord {
+
+        .fa-facebook-square,
+        .fa-twitter,
+        .fa-instagram,
+        .fa-discord {
             color: #525854;
             font-size: 20px;
             margin: 0 10px;
-            transition:all 0.5s;
+            transition: all 0.5s;
+
             &:hover {
                 text-decoration: none;
                 color: #0079dd;
             }
         }
     }
- 
-.btn-primary-home-1 {
-    background: url(../../../assets/images/logout-header.png) no-repeat 94% 3px;
-    background-size: 16%;
-    border: none;
-    font-size: 16px;
-    font-family: 'Oswald-Regular';
-    padding: 0 31px;
-    text-transform: uppercase;
-    transition: all 0.5s;
-    color: #0079dd;
-    border-radius: 50px;
-    margin-left: auto;
-    vertical-align: text-bottom;
-    margin-top: -7px;
-    /* position: absolute; */
-    /* right: 56px; */
-    /* top: 50px; */
-    cursor: pointer;
+
+    .btn-primary-home-1 {
+        background: url(../../../assets/images/logout-header.png) no-repeat 94% 3px;
+        background-size: 16%;
+        border: none;
+        font-size: 16px;
+        font-family: 'Oswald-Regular';
+        padding: 0 31px;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        color: #0079dd;
+        border-radius: 50px;
+        margin-left: auto;
+        vertical-align: text-bottom;
+        margin-top: -7px;
+        /* position: absolute; */
+        /* right: 56px; */
+        /* top: 50px; */
+        cursor: pointer;
+
         &:hover {
-           color: #0079dd;
-          
+            color: #0079dd;
+
         }
 
-    &:focus {
-      box-shadow: none;
-      outline: none;
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
     }
-  }
 }
+
 .closeConfirmed {
     margin-right: 10px;
 }
-.confirm-float{
-    float:right
+
+.confirm-float {
+    float: right
 }
+
 .startup-form h5 {
     color: #fff;
     font-size: 27px;
     margin-bottom: 15px;
 }
-.page-header{
+
+.page-header {
     -webkit-app-region: drag;
 }
+
 .social a {
     -webkit-app-region: no-drag;
-  }
-.clsbtns a{
+}
+
+.clsbtns a {
     -webkit-app-region: no-drag;
-  }
-  .feedback-header
-  {
-      -webkit-app-region: no-drag;
-  }
+}
+
+.feedback-header {
+    -webkit-app-region: no-drag;
+}
+
 .main-nav {
     background: #ee3324;
     padding: 7px 0;
@@ -103,6 +121,7 @@
         margin-right: 3%;
         font-size: 16px;
     }
+
     .btn-primary {
         background: none;
         border: 2px solid #fff;
@@ -111,6 +130,7 @@
         padding: .3rem 1.75rem;
         text-transform: uppercase;
         transition: all 0.5s;
+
         &:hover {
             background: #0079dd;
             border: 2px solid #0079dd;
@@ -118,40 +138,72 @@
     }
 }
 
+.update-nav {
+    background: #044bce;
+    padding: 7px 0;
+
+    .free-trial {
+        color: #fff;
+        font-family: 'Oswald-Regular';
+        margin-right: 3%;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        color: #0079dd;
+        background: #fff;
+        border: 2px solid #fff;
+        font-size: 16px;
+        font-family: 'Oswald-Regular';
+        padding: .3rem 1.75rem;
+        text-transform: uppercase;
+        transition: all 0.5s;
+
+        &:hover {
+            background: #0079dd;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+    }
+}
+
 .clsbtns {
     position: absolute;
-    top:10px;
+    top: 10px;
     right: 10px;
-   .subtract-1 {
-       width: 10px;
-       height: 10px;
-       background: url(../../../assets/images/subtract-1.png) no-repeat left center;
-       display: inline-block;
-       background-size: cover;
-       margin-right: 12px;
-       cursor: pointer;
-       vertical-align: top;
-   }
-   .subtract-2 {
-    width: 10px;
-    height: 10px;
-     background: url(../../../assets/images/substract.png) no-repeat left center;
-    display: inline-block;
-    background-size: cover;
-    margin-right: 12px;
-    cursor: pointer;
-    vertical-align: top;
-}
-.subtract-3 {
-    width: 10px;
-    height: 10px;
-    background: url(../../../assets/images/subtract-2.png) no-repeat left center;
-    display: inline-block;
-    background-size: cover;
-    opacity: 1;
-    cursor: pointer;
-    vertical-align: top;
-}
+
+    .subtract-1 {
+        width: 10px;
+        height: 10px;
+        background: url(../../../assets/images/subtract-1.png) no-repeat left center;
+        display: inline-block;
+        background-size: cover;
+        margin-right: 12px;
+        cursor: pointer;
+        vertical-align: top;
+    }
+
+    .subtract-2 {
+        width: 10px;
+        height: 10px;
+        background: url(../../../assets/images/substract.png) no-repeat left center;
+        display: inline-block;
+        background-size: cover;
+        margin-right: 12px;
+        cursor: pointer;
+        vertical-align: top;
+    }
+
+    .subtract-3 {
+        width: 10px;
+        height: 10px;
+        background: url(../../../assets/images/subtract-2.png) no-repeat left center;
+        display: inline-block;
+        background-size: cover;
+        opacity: 1;
+        cursor: pointer;
+        vertical-align: top;
+    }
 }
 
 /* Responsive CSS start here */
@@ -160,12 +212,15 @@
     .header-row {
         flex-direction: column;
     }
+
     .page-header .logo {
         margin-right: 0;
     }
+
     .page-header .social {
         margin-left: 0;
     }
+
     .page-header .btn-link {
         margin: 10px 0;
     }

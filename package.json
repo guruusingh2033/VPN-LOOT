@@ -21,6 +21,7 @@
     "postinstall:web": "node postinstall-web",
     "postinstall:electron": "node postinstall",
     "ng": "ng",
+    "pack": "electron-packager . Loot_VPN --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/favicon.ico --prune=true --out=release-builds --version-string.CompanyName=LootVpn --version-string.FileDescription=LootVPN",
     "start": "npm run postinstall:electron && npm-run-all -p ng:serve electron:serve",
     "build": "npm run postinstall:electron && npm run electron:serve-tsc && ng build",
     "build:dev": "npm run build -- -c dev",
@@ -38,9 +39,15 @@
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
+    "@angular/animations": "^7.2.13",
+    "auto-launch": "^5.0.5",
     "ngx-bootstrap": "^3.1.4",
     "ngx-electron": "^2.0.0",
-    "rxjs-compat": "^6.3.3"
+    "ngx-toastr": "^10.0.2",
+    "node-openvpn": "^0.1.1",
+    "ps-tree": "^1.2.0",
+    "rxjs-compat": "^6.3.3",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.11.4",

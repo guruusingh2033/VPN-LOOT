@@ -4,9 +4,8 @@ import {ElectronService} from '../../providers/electron.service'
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService } from 'ngx-bootstrap';
 import { AuthService } from '../../service/authService';
+import * as io from "socket.io-client";
 
-// const rm = require('electron').remote
-// import * as systemjs from 'systemjs'
 
 @Component({
   selector: 'app-header',
@@ -18,14 +17,31 @@ export class HeaderComponent implements OnInit {
   modalRef: BsModalRef;
   emailID: String;
   alertMessage: String;
+  updateInfo: object;
   showRedBar :boolean;
+  showBlueBar :boolean;
   showBuyButton :boolean;
+  socket = io('https://lootvpn-backend.herokuapp.com'); 
   @Output() statusAlert: EventEmitter<any> = new EventEmitter();
 
   constructor(public authService: AuthService,private modalService: BsModalService,private electronService : ElectronService) {
   }
   
   ngOnInit() {
+    this.socket.emit('update-request',{myappversion : '1.0'})
+    this.socket.on('update', function (data) {
+      let LatestVersion = parseFloat(data.version)
+      if (LatestVersion > 1.0){
+        this.showBlueBar = true;
+        this.updateInfo = data;
+        this.updateInfo.title = "Update of LootVPN is available";
+      }
+    }.bind(this));
+    setInterval(function(){
+      console.log("emittttting")
+      this.socket.emit('update-request', { myappversion: '1.0' })
+    }.bind(this),3600000)
+
     if (localStorage.getItem('currentUser')){
 
     this.emailID = JSON.parse(localStorage.getItem('currentUser')).email;
@@ -36,7 +52,7 @@ export class HeaderComponent implements OnInit {
           if (data.account_status){
 
           this.statusAlert.emit(data);
-          
+            alert(data.account_status)
           switch (data.account_status)
           {
             case ('PAID'):
@@ -55,8 +71,8 @@ export class HeaderComponent implements OnInit {
             this.showBuyButton = true;
             break;
             
-            case ('CLOSED'):
-            this.alertMessage = "Your account is CLOSED";
+            case ('CANCELLED'):
+            this.alertMessage = "Your account is EXPIRED";
             this.showRedBar = true;
             this.showBuyButton = true;
             break;
@@ -78,7 +94,9 @@ export class HeaderComponent implements OnInit {
       );
       }
   }
-
+  hideBlueBar(){
+    this.showBlueBar = false;
+  }
   openLink(mediaLink: any)
   {
     this.electronService.openMediaLinkOnBrowser(mediaLink);

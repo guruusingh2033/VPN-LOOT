@@ -23,7 +23,7 @@ function createWindow() {
     // x: 0,
     // y: 0,
     width: 900,
-    height: 700,
+    height: 760,
     // icon: "./src/favicon.512x512.png",
     webPreferences: {
     devTools: false
