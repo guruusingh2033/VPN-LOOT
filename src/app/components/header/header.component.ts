@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   showRedBar :boolean;
   showBlueBar :boolean;
   showBuyButton :boolean;
-  socket = io('https://lootvpn-backend.herokuapp.com'); 
+  socket = io('http://139.99.167.155:3000/loot'); 
   @Output() statusAlert: EventEmitter<any> = new EventEmitter();
 
   constructor(public authService: AuthService,private modalService: BsModalService,private electronService : ElectronService) {
@@ -52,7 +52,6 @@ export class HeaderComponent implements OnInit {
           if (data.account_status){
 
           this.statusAlert.emit(data);
-            alert(data.account_status)
           switch (data.account_status)
           {
             case ('PAID'):
@@ -112,10 +111,10 @@ export class HeaderComponent implements OnInit {
     this.electronService.closeWindow();
   }
 
-  maximizeWindow()
-  {
-    this.electronService.maximizeWindow()
-  }
+  // maximizeWindow()
+  // {
+  //   this.electronService.maximizeWindow()
+  // }
 
   minimizeWindow()
   {

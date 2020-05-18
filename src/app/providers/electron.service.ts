@@ -237,14 +237,14 @@ export class ElectronService {
     this.shell.openExternal(mediaLink);
   }
 
-  maximizeWindow() {
-    var window = this.remote.getCurrentWindow();
-    if (!window.isMaximized()) {
-      window.maximize();
-    } else {
-      window.unmaximize();
-    }
-  }
+  // maximizeWindow() {
+  //   var window = this.remote.getCurrentWindow();
+  //   if (!window.isMaximized()) {
+  //     window.maximize();
+  //   } else {
+  //     window.unmaximize();
+  //   }
+  // }
 
   minimizeWindow() {
     // this.remote.BrowserWindow.getFocusedWindow().minimize();
