@@ -1,9 +1,16 @@
 {
-  "productName": "Loot_VPN",
+  "productName": "LootVPN",
   "directories": {
     "output": "release/"
     
   },
+    
+  
+  "nsis": {
+    "runAfterFinish": false,
+    "oneClick": false
+  },
+
     "files": [
         "**/*",
         "!**/*.ts",
@@ -21,9 +28,8 @@
         "!tslint.json"
     ],
   "win": {
-    "icon": "dist",
-    "target": [
-      "portable"
+    "icon": "dist/favicon.ico",
+    "target":[ "nsis"
     ]
   },
   "mac": {
