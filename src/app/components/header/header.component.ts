@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService } from 'ngx-bootstrap';
 import { AuthService } from '../../service/authService';
 import * as io from "socket.io-client";
-
+import { AppConfig } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   showRedBar :boolean;
   showBlueBar :boolean;
   showBuyButton :boolean;
-  socket = io('http://139.99.167.155:3000/loot'); 
+  socket = io(AppConfig.socket_url);  
   @Output() statusAlert: EventEmitter<any> = new EventEmitter();
 
   constructor(public authService: AuthService,private modalService: BsModalService,private electronService : ElectronService) {
@@ -31,16 +31,16 @@ export class HeaderComponent implements OnInit {
     this.socket.emit('update-request',{myappversion : '1.0'})
     this.socket.on('update', function (data) {
       let LatestVersion = parseFloat(data.version)
-      if (LatestVersion > 1.0){
+      if (LatestVersion > AppConfig.my_app_version){
         this.showBlueBar = true;
         this.updateInfo = data;
-        this.updateInfo.title = "Update of LootVPN is available";
+        // this.updateInfo.title = "Update of LootVPN is available";
       }
     }.bind(this));
     setInterval(function(){
       console.log("emittttting")
       this.socket.emit('update-request', { myappversion: '1.0' })
-    }.bind(this),3600000)
+    }.bind(this),86400000)
 
     if (localStorage.getItem('currentUser')){
 

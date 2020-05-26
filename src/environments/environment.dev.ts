@@ -7,4 +7,6 @@ export const AppConfig = {
   production: false,
   environment: 'DEV',
   api_url: 'http://139.99.167.155:3000/loot',
+  my_app_version: 1.1,
+  socket_url: 'http://139.99.167.155:3000/'
 };

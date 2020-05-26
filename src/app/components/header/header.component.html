@@ -31,8 +31,8 @@
 </nav>
 <nav *ngIf="showBlueBar" class="update-nav">
   <div  class="container text-center">
-    <a class="free-trial">{{updateInfo.title}} </a>
-    <a  (click)="openLink('https://www.lootvpn.com')" class="btn btn-primary">Update</a>
+    <a class="free-trial">{{updateInfo.description}} </a>
+    <a  (click)="openLink(updateInfo.link)" class="btn btn-primary">Update</a>
     <button type="button" (click)="hideBlueBar()" class="update-close pull-right" aria-label="Close" >
       <span aria-hidden="true">&times;</span>
     </button>

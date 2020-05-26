@@ -1,6 +1,6 @@
 {
   "name": "LootVPN",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Angular 7 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
