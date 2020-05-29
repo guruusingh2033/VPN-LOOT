@@ -80,12 +80,12 @@ export class ElectronService {
   }
   configureFile(location) {
     const absolute_path = this.remote.app.getPath('userData')
-    console.log('configure');
+    console.log('configure: ', location);
     const certificates = JSON.parse(localStorage.getItem('currentUser')).certificates;
 
     let australia_VPN = ""
     for (var i = 0; i < certificates.length; i++) {
-      if (certificates[i].location == 'Australia(Sydney)') {
+      if (certificates[i].location == location) {
         australia_VPN = certificates[i].certificate
       }
     }
@@ -135,7 +135,7 @@ export class ElectronService {
   }
 
   connect() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => { 
 
       debugger
       this.exec('NET SESSION', function (err, so, se) {

@@ -25,7 +25,7 @@
 
             <div class="form-group">
               <h5>Server</h5>
-              <select [(ngModel)]="selectedServer" name="servers" class="arrow-select-class form-control">
+              <select [(ngModel)]="selectedServer" name="servers" class="arrow-select-class form-control" (change)="changeServer($event)">
                 <!-- <option>Fastest Server</option> -->
                 <option *ngFor="let list of serverList;let i = index" [selected]="i == 0"  [value]="list.location">{{list.location}}</option>
                 <!-- <option>USA, Ohio</option> -->

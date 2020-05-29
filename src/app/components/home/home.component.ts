@@ -178,7 +178,11 @@ export class HomeComponent implements OnInit {
   closeModal() {
     this.modalRef.hide();
   }
-
+//on changing server dropdown
+changeServer(event: any)
+{
+  this.electronService.configureFile(event.target.value);
+}
 
 
 }
